@@ -49,22 +49,22 @@ export const Footer: React.FC = () => {
                 <a href="#home" className="hover:text-gold-400 transition-colors">Home &amp; Ambiance</a>
               </li>
               <li>
-                <a href="#experience" className="hover:text-gold-400 transition-colors">The Palace Experience</a>
+                <a href="#experience" className="hover:text-gold-400 transition-colors">About Our Restaurant</a>
               </li>
               <li>
-                <a href="#menu" className="hover:text-gold-400 transition-colors">Interactive Digital Menu</a>
+                <a href="#menu" className="hover:text-gold-400 transition-colors">Food Menu</a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-gold-400 transition-colors">Lawn Gazebos &amp; Video Reels</a>
+                <a href="#gallery" className="hover:text-gold-400 transition-colors">Photo &amp; Video Gallery</a>
               </li>
               <li>
-                <a href="#turf" className="hover:text-gold-400 transition-colors">Box Cricket &amp; Football Turf 🏏</a>
+                <a href="#turf" className="hover:text-gold-400 transition-colors">Turf Arena Booking 🏏</a>
               </li>
               <li>
                 <a href="#rooms" className="hover:text-gold-400 transition-colors">Highway AC Rooms 🏨</a>
               </li>
               <li>
-                <a href="#reviews" className="hover:text-gold-400 transition-colors">Diner Reviews &amp; Stories</a>
+                <a href="#reviews" className="hover:text-gold-400 transition-colors">Customer Reviews</a>
               </li>
             </ul>
           </div>

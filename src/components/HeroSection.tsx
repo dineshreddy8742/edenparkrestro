@@ -20,15 +20,15 @@ export const HeroSection: React.FC = () => {
   const slides = [
     {
       src: '/assets/images/hero-slide-1.png',
-      title: 'Grand Palace Gardens & Water Fountains',
-      tag: 'Palace Grounds',
-      desc: 'Sprawling luxury landscape welcoming Bangalore–Tirupati highway travellers'
+      title: 'Green Lawns & Resort Grounds',
+      tag: 'Garden Grounds',
+      desc: 'Spacious highway restaurant welcoming Bangalore–Tirupati commuters'
     },
     {
       src: '/assets/images/hero-slide-2.png',
-      title: 'Royal Dining Gazebos & Courtyard',
-      tag: 'Gazebo Pavilions',
-      desc: 'Open-air dining under twilight skies with natural cross-breezes'
+      title: 'Open Dining Gazebos & Courtyard',
+      tag: 'Garden Gazebos',
+      desc: 'Open-air dining under evening skies with natural cross-breezes'
     },
     {
       src: '/assets/images/hero-slide-3.jpg',
@@ -175,17 +175,17 @@ export const HeroSection: React.FC = () => {
           <span>Bangalore–Tirupati Highway</span>
         </div>
 
-        {/* Refined Luxury Heading */}
+        {/* Clean & Warm Heading */}
         <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight sm:leading-snug mb-3 drop-shadow-md">
-          Authentic Flavours,{' '}
+          Authentic Flavours &{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F7E7C4] via-[#DFB864] to-[#F7E7C4] italic font-serif">
-            Royal Ambiance
+            Warm Ambiance
           </span>
         </h1>
 
         {/* Short & Clean Subtitle */}
         <p className="text-xs sm:text-sm md:text-base text-stone-200 max-w-xl font-medium leading-relaxed mb-6 drop-shadow-sm px-2">
-          Wood-fired biryanis & authentic dining — served in 100% separate Veg &amp; Non-Veg kitchens.
+          Wood-fired biryanis &amp; authentic dining — served in 100% separate Veg &amp; Non-Veg kitchens.
         </p>
 
         {/* Action Buttons */}
@@ -195,7 +195,7 @@ export const HeroSection: React.FC = () => {
             className="w-full sm:w-auto px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#EEDAA2] via-[#DFB864] to-[#C59B3F] hover:from-[#F7E7C4] hover:to-[#DFB864] shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
           >
             <UtensilsCrossed className="w-4 h-4 text-black" />
-            <span>Explore Available Dishes</span>
+            <span>Explore Food Menu</span>
           </a>
 
           <button
@@ -203,7 +203,7 @@ export const HeroSection: React.FC = () => {
             className="w-full sm:w-auto px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide text-white bg-black/60 hover:bg-black/80 border border-gold-400/60 hover:border-gold-300 backdrop-blur-md shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
           >
             <BookOpen className="w-4 h-4 text-gold-400" />
-            <span>View 10-Page Printed Menu</span>
+            <span>View Printed Menu</span>
           </button>
         </div>
 

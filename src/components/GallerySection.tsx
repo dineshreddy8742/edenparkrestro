@@ -86,25 +86,24 @@ export const GallerySection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
             <Camera className="w-3.5 h-3.5 text-gold-700" />
-            <span>Visual Splendour</span>
+            <span>Photo &amp; Video Gallery</span>
           </div>
 
           <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-leela-heading mb-2 leading-tight">
-            A Peek into the <span className="text-gold-gradient italic font-serif">Eden Park Grounds</span>
+            Explore <span className="text-gold-gradient italic font-serif">The Eden Park Grounds</span>
           </h2>
 
           <p className="text-leela-body text-sm sm:text-base font-normal leading-relaxed">
-            Real captures of our sprawling estate on Bangalore–Tirupati highway: lush garden gazebos,
-            magical night illumination, and banquet lawns.
+            Real photos and videos of our open gardens, night lighting, family AC dining hall, and spacious grounds.
           </p>
 
           {/* Filter Pills */}
           <div className="flex items-center justify-center gap-2 mt-8 overflow-x-auto pb-2">
             {[
-              { key: 'all', label: 'All Perspectives' },
-              { key: 'night', label: 'Night Illuminations' },
+              { key: 'all', label: 'All Photos & Videos' },
+              { key: 'night', label: 'Night Ambiance' },
               { key: 'gardens', label: 'Daylight Lawns & AC Hall' },
-              { key: 'videos', label: 'Cinematic Video Reels' },
+              { key: 'videos', label: 'Videos' },
             ].map((tab) => (
               <button
                 key={tab.key}

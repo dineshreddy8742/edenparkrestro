@@ -5,32 +5,32 @@ export const ExperienceShowcase: React.FC = () => {
 
   const features = [
     {
-      title: 'Dual Kitchen Guarantee',
-      desc: '100% separate pure vegetarian and non-vegetarian kitchens under distinct roofs with independent cutlery, cookware, and chefs.',
+      title: '100% Separate Kitchens',
+      desc: 'Dedicated pure vegetarian and non-vegetarian kitchens under separate roofs with independent cutlery, cookware, and chefs.',
       icon: ShieldCheck,
       image: '/assets/images/ambiance-4.jpg',
-      badge: 'Uncompromising Purity'
+      badge: 'Pure Veg & Non-Veg'
     },
     {
-      title: 'Open Garden Gazebos',
-      desc: 'Dine under illuminated twilight skies with cool breezes, manicured green lawns, and wooden platform pavilions.',
+      title: 'Open Garden Dining',
+      desc: 'Dine under open evening skies with cool breezes, green lawns, and comfortable outdoor seating for families.',
       icon: Trees,
       image: '/assets/images/ambiance-8.jpg',
-      badge: 'Sunset Dining'
+      badge: 'Garden Seating'
     },
     {
-      title: 'Opulent AC Royal Dining',
-      desc: 'Floor-to-ceiling glass architecture with climate-controlled luxury seating for formal dinners, families, and executive gatherings.',
+      title: 'Family AC Dining',
+      desc: 'Clean, climate-controlled glass dining hall with comfortable seating for family lunches, dinners, and gatherings.',
       icon: Sparkles,
       image: '/assets/images/ambiance-10.jpg',
-      badge: 'Palatial Comfort'
+      badge: 'AC Dining Hall'
     },
     {
-      title: 'Highway Travellers Oasis',
+      title: 'Highway Travellers Rest Stop',
       desc: 'Spacious 24/7 parking, clean rest facilities, café for fresh filter coffee, and stays for highway commuters on Bangalore–Tirupati road.',
       icon: BedDouble,
-      image: '/assets/images/ambiance-3.jpg',
-      badge: 'Premier Stopover'
+      image: '/assets/images/hero-slide-1.png',
+      badge: 'Highway Stopover'
     },
   ];
 
@@ -41,20 +41,19 @@ export const ExperienceShowcase: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Heading — Refined, Not Too Big */}
+        {/* Section Heading — Clean & Inviting */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
             <Award className="w-3.5 h-3.5 text-gold-700" />
-            <span>The Leela-Inspired Hospitality</span>
+            <span>Welcoming Highway Hospitality</span>
           </div>
 
           <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-leela-heading mb-2 leading-tight">
-            A Destination, <span className="text-gold-gradient italic font-serif">Not Just a Meal</span>
+            A Great Stop, <span className="text-gold-gradient italic font-serif">A Wonderful Meal</span>
           </h2>
 
           <p className="text-leela-body text-xs sm:text-sm font-normal leading-relaxed max-w-lg mx-auto">
-            Spanning expansive highway grounds, The Eden Park Resto redefines dining in Andhra Pradesh.
-            Every corner is designed for regal comfort, family bonding, and unforgettable celebrations.
+            Spanning expansive highway grounds, The Eden Park Resto provides fresh delicious food, pleasant garden dining, and comfortable rest amenities for families and travellers.
           </p>
         </div>
 
@@ -101,7 +100,7 @@ export const ExperienceShowcase: React.FC = () => {
                     href="#menu"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gold-700 hover:text-gold-900 transition-colors group-hover:translate-x-1 duration-300"
                   >
-                    <span>Explore Available Delicacies →</span>
+                    <span>View Menu Dishes →</span>
                   </a>
                 </div>
               </div>

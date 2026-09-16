@@ -26,17 +26,17 @@ export const RecognitionSection: React.FC = () => {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider shadow-xs">
                 <Trophy className="w-3.5 h-3.5 text-gold-700" />
-                <span>Premier Dining Landmark</span>
+                <span>Highway Dining Landmark</span>
               </div>
 
               <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-leela-heading leading-tight mb-2">
-                Chittoor's Most Celebrated <span className="text-gold-gradient italic font-serif">Highway Gastronomy Oasis</span>
+                Chittoor's Favorite <span className="text-gold-gradient italic font-serif">Highway Family Restaurant</span>
               </h2>
 
               <p className="text-leela-body text-sm sm:text-base font-normal leading-relaxed">
-                Positioned strategically along the Bangalore–Tirupati National Highway, The Eden Park Resto
-                has earned the reverence of interstate pilgrims, discerning corporate travellers, and local
-                gourmands alike for unyielding culinary authenticity and warm Andhra hospitality.
+                Conveniently located on the Bangalore–Tirupati National Highway, The Eden Park Resto
+                is the trusted stop for families, pilgrims, and road-trippers looking for delicious food,
+                clean facilities, and warm Andhra hospitality.
               </p>
 
               {/* Accolade Metrics */}

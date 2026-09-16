@@ -22,12 +22,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
   const navLinks = [
     { label: "Home", href: "#home", page: "home" as const },
     { label: "Food Menu", href: "#menu", page: "menu" as const },
-    { label: "Palace Experience", href: "#experience", page: "home" as const },
-    { label: "Lawn & Gazebos", href: "#gallery", page: "home" as const },
+    { label: "About Us", href: "#experience", page: "home" as const },
+    { label: "Gallery", href: "#gallery", page: "home" as const },
     { label: "Book Turf 🏏", href: "#turf", page: "turf" as const, highlight: "green" as const },
     { label: "Rooms 🏨", href: "#rooms", page: "home" as const, highlight: "amber" as const },
-    { label: "Highway Landmark", href: "#recognition", page: "home" as const },
-    { label: "Diner Reviews", href: "#reviews", page: "home" as const },
+    { label: "Location", href: "#recognition", page: "home" as const },
+    { label: "Reviews", href: "#reviews", page: "home" as const },
   ];
 
   const handleLinkClick = (link: typeof navLinks[0]) => {
@@ -141,13 +141,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
             className={`hidden sm:flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-full transition-all shadow-xs ${scrolled || currentPage !== 'home' ? "text-gold-800 bg-[#FAF3E0] border border-gold-400 hover:bg-[#F5E6BD]" : "text-white bg-black/40 hover:bg-black/60 border border-white/30 backdrop-blur-sm"}`}
             title="View 10-Page Printed Menu"
           >
-            <BookOpen className="w-3.5 h-3.5 text-gold-400" /><span>Printed Booklet</span>
+            <BookOpen className="w-3.5 h-3.5 text-gold-400" /><span>Printed Menu</span>
           </button>
           <a 
             href="tel:+919603308999"
             className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 rounded-full shadow-gold-sm hover:shadow-gold-md hover:scale-105 active:scale-95 transition-all duration-300"
           >
-            <Phone className="w-3.5 h-3.5 text-white" /><span>Call Restro</span>
+            <Phone className="w-3.5 h-3.5 text-white" /><span>Call Us</span>
           </a>
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -183,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
               onClick={() => { setMobileMenuOpen(false); setIsMenuOriginalOpen(true); }}
               className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold text-gold-800 bg-[#FAF3E0] border border-gold-400 rounded-xl hover:bg-[#F5E6BD]"
             >
-              <BookOpen className="w-4 h-4 text-gold-700" /><span>View 10-Page Printed Menu Cards</span>
+              <BookOpen className="w-4 h-4 text-gold-700" /><span>View Printed Menu Cards</span>
             </button>
             <a 
               href="tel:+919603308999"
