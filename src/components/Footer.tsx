@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="space-y-4">
-            <BrandLogo size="md" />
+            <BrandLogo size="md" light={true} />
 
             <p className="text-xs text-[#B8AB99] leading-relaxed font-normal">
               Chittoor's largest dining destination. Sprawling green lawns, AC indoor halls, 

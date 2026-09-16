@@ -16,13 +16,21 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onBackToHome }) => {
       {/* Top Header Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-6">
         <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-[#E8DCB8] shadow-sm">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FAF3E0] hover:bg-[#F5E6BD] text-gold-900 text-xs sm:text-sm font-bold border border-gold-300 transition-all cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4 text-gold-700" />
-            <span>← Back to Eden Park Home</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onBackToHome}
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#FAF3E0] hover:bg-[#F5E6BD] text-gold-900 text-xs sm:text-sm font-bold border border-gold-300 transition-all cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 text-gold-700" />
+              <span>← Back to Home</span>
+            </button>
+            <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-[#E8DCB8]">
+              <div className="w-7 h-7 rounded-full overflow-hidden border border-gold-400 bg-black shrink-0 shadow-xs">
+                <img src="/assets/images/logo.png" alt="The Eden Park" className="w-full h-full object-cover" />
+              </div>
+              <span className="font-serif font-black text-xs sm:text-sm text-gold-900 tracking-wider">THE EDEN PARK</span>
+            </div>
+          </div>
 
           <div className="flex items-center gap-3">
             <button

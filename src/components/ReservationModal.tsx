@@ -78,15 +78,15 @@ export const ReservationModal: React.FC = () => {
         {/* Modal Header */}
         <div className="bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 p-5 sm:p-6 text-black flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-black/15 flex items-center justify-center">
-              <CalendarDays className="w-5 h-5 text-black" />
+            <div className="w-11 h-11 rounded-full bg-black border border-gold-400 overflow-hidden shrink-0 shadow-md">
+              <img src="/assets/images/logo.png" alt="The Eden Park" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="text-[10px] font-bold uppercase tracking-widest text-black/80 font-mono">
-                The Leela-Inspired Hospitality
+                The Eden Park Restro
               </div>
               <h2 className="font-serif font-black text-xl sm:text-2xl text-black">
-                Reserve a Royal Table
+                Table Reservation
               </h2>
             </div>
           </div>

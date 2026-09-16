@@ -38,12 +38,12 @@ export const ReceiptModal: React.FC = () => {
         {/* Header Ribbon */}
         <div className="bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 p-6 text-black flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
-              <CheckCircle2 className="w-7 h-7 text-black" />
+            <div className="w-12 h-12 rounded-full bg-black border border-gold-400 overflow-hidden shrink-0 shadow-md">
+              <img src="/assets/images/logo.png" alt="Eden Park Resto" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="text-[10px] font-bold uppercase tracking-widest text-black/80 font-mono">
-                Order Ticket Confirmed
+                The Eden Park Resto
               </div>
               <h3 className="font-serif font-black text-2xl text-black">
                 {activeReceiptOrder.id}

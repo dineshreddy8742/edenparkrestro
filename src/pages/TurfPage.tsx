@@ -13,13 +13,21 @@ export const TurfPage: React.FC<TurfPageProps> = ({ onBackToHome }) => {
       {/* Top Header Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-6">
         <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#121915] border border-emerald-900/40 shadow-xl">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs sm:text-sm font-bold border border-white/10 transition-all cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4 text-emerald-400" />
-            <span>← Back to Eden Park Home</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onBackToHome}
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs sm:text-sm font-bold border border-white/10 transition-all cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 text-emerald-400" />
+              <span>← Back to Home</span>
+            </button>
+            <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-white/10">
+              <div className="w-7 h-7 rounded-full overflow-hidden border border-gold-400 bg-black shrink-0 shadow-xs">
+                <img src="/assets/images/logo.png" alt="The Eden Park" className="w-full h-full object-cover" />
+              </div>
+              <span className="font-serif font-black text-xs sm:text-sm text-gold-400 tracking-wider">THE EDEN PARK</span>
+            </div>
+          </div>
 
           <div className="flex items-center gap-3 text-xs">
             <span className="hidden sm:inline text-gray-400">Need help booking?</span>
