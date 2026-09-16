@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FAF7F2;
+    color: #241E19;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom The Leela Palace Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F4EFE6;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 4px;
+    border: 2px solid #F4EFE6;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9E781A;
+  }
+}
+
+@layer utilities {
+  /* Rich High-Contrast Leela Antique Gold Gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #8C6A24 0%, #B89225 50%, #785712 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Royal Champagne Jali & Card Accents */
+  .border-gold-gradient {
+    border-image: linear-gradient(to right, #DFCDAB, #C5A059, #DFCDAB) 1;
+  }
+
+  /* Palace Glass Card - Luminous Alabaster White & Champagne */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #E8DCB8;
+    box-shadow: 0 4px 20px -2px rgba(58, 45, 20, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Palace Header - Frosted Warm Ivory Silk */
+  .glass-header {
+    background: rgba(250, 247, 242, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #E8DCB8;
+  }
+
+  /* Warm Gold Glows */
+  .gold-glow {
+    box-shadow: 0 4px 20px rgba(184, 146, 37, 0.18);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: 0 12px 30px rgba(184, 146, 37, 0.22);
+    border-color: #C5A059;
+  }
+}
+
+/* Subtle Royal Shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(197,160,89,0) 0%, rgba(197,160,89,0.18) 50%, rgba(197,160,89,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Smooth Auto-Scroll Photo Marquee */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-scroll {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.animate-marquee-scroll:hover {
+  animation-play-state: paused;
+}
