@@ -4,7 +4,6 @@ import {
   UtensilsCrossed, 
   BookOpen,
   ShieldCheck, 
-  Sparkles, 
   Users, 
   Star,
   Compass,
@@ -99,7 +98,7 @@ export const HeroSection: React.FC = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setProgress(0);
   };
 
@@ -135,7 +134,7 @@ export const HeroSection: React.FC = () => {
           );
         })}
 
-        {/* Clean, Rich Cinematic Contrast Vignette: No milky white wash */}
+        {/* Clean, Rich Cinematic Contrast Vignette */}
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/35 to-black/65 pointer-events-none" />
 
         {/* Top Edge Auto-Scroll Progress Line */}
@@ -150,7 +149,7 @@ export const HeroSection: React.FC = () => {
       {/* Sleek Side Arrow Navigation Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white/90 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white/90 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl cursor-pointer"
         aria-label="Previous background photo"
         title="Previous Photo"
       >
@@ -159,7 +158,7 @@ export const HeroSection: React.FC = () => {
 
       <button
         onClick={nextSlide}
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white/90 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white/90 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl cursor-pointer"
         aria-label="Next background photo"
         title="Next Photo"
       >
@@ -169,30 +168,19 @@ export const HeroSection: React.FC = () => {
       {/* MAIN HERO CONTENT */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center flex-1 py-4">
         
-        {/* Compact Highway Pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-400/50 bg-black/60 text-gold-300 text-[11px] font-bold uppercase tracking-wider mb-3 backdrop-blur-md shadow-md">
-          <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-          <span>Bangalore–Tirupati Highway</span>
-        </div>
-
         {/* Clean & Warm Heading */}
-        <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight sm:leading-snug mb-3 drop-shadow-md">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight sm:leading-snug mb-5 drop-shadow-md">
           Authentic Flavours &{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F7E7C4] via-[#DFB864] to-[#F7E7C4] italic font-serif">
             Warm Ambiance
           </span>
         </h1>
 
-        {/* Short & Clean Subtitle */}
-        <p className="text-xs sm:text-sm md:text-base text-stone-200 max-w-xl font-medium leading-relaxed mb-6 drop-shadow-sm px-2">
-          Wood-fired biryanis &amp; authentic dining — served in 100% separate Veg &amp; Non-Veg kitchens.
-        </p>
-
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-6">
           <a
             href="#menu"
-            className="w-full sm:w-auto px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#EEDAA2] via-[#DFB864] to-[#C59B3F] hover:from-[#F7E7C4] hover:to-[#DFB864] shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#EEDAA2] via-[#DFB864] to-[#C59B3F] hover:from-[#F7E7C4] hover:to-[#DFB864] shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
           >
             <UtensilsCrossed className="w-4 h-4 text-black" />
             <span>Explore Food Menu</span>
@@ -200,7 +188,7 @@ export const HeroSection: React.FC = () => {
 
           <button
             onClick={() => setIsMenuOriginalOpen(true)}
-            className="w-full sm:w-auto px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide text-white bg-black/60 hover:bg-black/80 border border-gold-400/60 hover:border-gold-300 backdrop-blur-md shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide text-white bg-black/60 hover:bg-black/80 border border-gold-400/60 hover:border-gold-300 backdrop-blur-md shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
           >
             <BookOpen className="w-4 h-4 text-gold-400" />
             <span>View Printed Menu</span>
@@ -213,7 +201,7 @@ export const HeroSection: React.FC = () => {
           {/* Pause / Play Toggle */}
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="p-1 rounded-full text-gold-300 hover:text-white transition-colors"
+            className="p-1 rounded-full text-gold-300 hover:text-white transition-colors cursor-pointer"
             title={isPlaying ? "Pause Auto-Scroll" : "Play Auto-Scroll"}
           >
             {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3 fill-gold-400" />}
@@ -239,7 +227,7 @@ export const HeroSection: React.FC = () => {
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`relative h-2 rounded-full overflow-hidden transition-all duration-300 ${
+                className={`relative h-2 rounded-full overflow-hidden transition-all duration-300 cursor-pointer ${
                   i === currentSlide 
                     ? 'w-6 bg-white/30 ring-1 ring-gold-400' 
                     : 'w-2 bg-white/40 hover:bg-white/70'

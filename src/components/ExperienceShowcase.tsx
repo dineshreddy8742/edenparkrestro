@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ShieldCheck, Trees, Sparkles, Award, BedDouble } from 'lucide-react';
 
 export const ExperienceShowcase: React.FC = () => {
@@ -42,7 +43,13 @@ export const ExperienceShowcase: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Heading — Clean & Inviting */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-10"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
             <Award className="w-3.5 h-3.5 text-gold-700" />
             <span>Welcoming Highway Hospitality</span>
@@ -55,15 +62,24 @@ export const ExperienceShowcase: React.FC = () => {
           <p className="text-leela-body text-xs sm:text-sm font-normal leading-relaxed max-w-lg mx-auto">
             Spanning expansive highway grounds, The Eden Park Resto provides fresh delicious food, pleasant garden dining, and comfortable rest amenities for families and travellers.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Feature Grid */}
+        {/* Feature Grid with Side Landing Entrance Animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
           {features.map((feat, index) => {
             const IconComponent = feat.icon;
+            const isLeft = index % 2 === 0;
             return (
-              <div 
+              <motion.div 
                 key={index}
+                initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: (index % 2) * 0.15,
+                  ease: [0.25, 0.1, 0.25, 1.0] 
+                }}
                 className="group relative rounded-2xl overflow-hidden bg-white border border-[#E8DCB8] hover:border-gold-500 transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 {/* Visual Image */}
@@ -72,6 +88,7 @@ export const ExperienceShowcase: React.FC = () => {
                     src={feat.image}
                     alt={feat.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                   
@@ -103,7 +120,7 @@ export const ExperienceShowcase: React.FC = () => {
                     <span>View Menu Dishes →</span>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

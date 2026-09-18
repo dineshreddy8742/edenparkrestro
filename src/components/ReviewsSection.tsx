@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { useStore } from '../context/StoreContext';
 import { Star, MessageSquareQuote, Plus, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { AddReviewModal } from './AddReviewModal';
@@ -28,7 +29,13 @@ export const ReviewsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6"
+        >
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
               <MessageSquareQuote className="w-3.5 h-3.5 text-gold-700" />
@@ -49,7 +56,7 @@ export const ReviewsSection: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => scroll('left')}
-                className="w-10 h-10 rounded-full border border-[#DFCDAB] bg-white text-leela-heading hover:border-gold-500 hover:text-gold-700 hover:bg-[#FAF3E0] shadow-sm flex items-center justify-center transition-all active:scale-95"
+                className="w-10 h-10 rounded-full border border-[#DFCDAB] bg-white text-leela-heading hover:border-gold-500 hover:text-gold-700 hover:bg-[#FAF3E0] shadow-sm flex items-center justify-center transition-all active:scale-95 cursor-pointer"
                 aria-label="Previous Reviews"
                 title="Scroll Left"
               >
@@ -57,7 +64,7 @@ export const ReviewsSection: React.FC = () => {
               </button>
               <button
                 onClick={() => scroll('right')}
-                className="w-10 h-10 rounded-full border border-[#DFCDAB] bg-white text-leela-heading hover:border-gold-500 hover:text-gold-700 hover:bg-[#FAF3E0] shadow-sm flex items-center justify-center transition-all active:scale-95"
+                className="w-10 h-10 rounded-full border border-[#DFCDAB] bg-white text-leela-heading hover:border-gold-500 hover:text-gold-700 hover:bg-[#FAF3E0] shadow-sm flex items-center justify-center transition-all active:scale-95 cursor-pointer"
                 aria-label="Next Reviews"
                 title="Scroll Right"
               >
@@ -67,13 +74,13 @@ export const ReviewsSection: React.FC = () => {
 
             <button
               onClick={() => setIsAddReviewOpen(true)}
-              className="px-5 py-2.5 rounded-full font-bold uppercase tracking-wider text-xs text-white bg-gradient-to-r from-gold-600 to-gold-700 shadow-gold-sm hover:shadow-gold-md hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+              className="px-5 py-2.5 rounded-full font-bold uppercase tracking-wider text-xs text-white bg-gradient-to-r from-gold-600 to-gold-700 shadow-gold-sm hover:shadow-gold-md hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
             >
               <Plus className="w-4 h-4 text-white" />
               <span>Write a Review</span>
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
@@ -86,7 +93,7 @@ export const ReviewsSection: React.FC = () => {
                   scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
                 }
               }}
-              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 filterType === cat
                   ? 'bg-gradient-to-r from-gold-600 to-gold-700 text-white shadow-sm'
                   : 'bg-white text-leela-heading border border-[#DFCDAB] hover:border-gold-500 shadow-sm'
@@ -97,57 +104,68 @@ export const ReviewsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Horizontal Scroll Reviews Container */}
+        {/* Horizontal Scroll Reviews Container with Landing Animation */}
         <div
           ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto pb-6 pt-1 px-1 scroll-smooth snap-x snap-mandatory cursor-grab active:cursor-grabbing no-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {filteredReviews.map((rev) => (
-            <div
-              key={rev.id}
-              className="w-[300px] sm:w-[360px] md:w-[400px] shrink-0 snap-start bg-white p-6 sm:p-7 rounded-3xl border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 flex flex-col justify-between shadow-palace-card hover:shadow-palace-hover relative group"
-            >
-              <Quote className="absolute top-5 right-5 w-8 h-8 text-[#E8DCB8]/40 group-hover:text-gold-400/30 transition-colors pointer-events-none" />
+          {filteredReviews.map((rev, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <motion.div
+                key={rev.id}
+                initial={{ opacity: 0, x: isLeft ? -40 : 40, y: 15 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: (index % 4) * 0.08,
+                  ease: [0.25, 0.1, 0.25, 1.0] 
+                }}
+                className="w-[300px] sm:w-[360px] md:w-[400px] shrink-0 snap-start bg-white p-6 sm:p-7 rounded-3xl border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 flex flex-col justify-between shadow-palace-card hover:shadow-palace-hover relative group"
+              >
+                <Quote className="absolute top-5 right-5 w-8 h-8 text-[#E8DCB8]/40 group-hover:text-gold-400/30 transition-colors pointer-events-none" />
 
-              <div>
-                {/* Rating Stars - Clean (No Verified Diner Badge) */}
-                <div className="flex items-center gap-1 mb-4">
-                  {Array.from({ length: rev.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold-500 text-gold-500" />
-                  ))}
+                <div>
+                  {/* Rating Stars */}
+                  <div className="flex items-center gap-1 mb-4">
+                    {Array.from({ length: rev.rating }).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-gold-500 text-gold-500" />
+                    ))}
+                  </div>
+
+                  {/* Comment Text */}
+                  <p className="text-leela-heading text-sm sm:text-base font-normal leading-relaxed mb-6 italic">
+                    "{rev.comment}"
+                  </p>
                 </div>
 
-                {/* Comment Text */}
-                <p className="text-leela-heading text-sm sm:text-base font-normal leading-relaxed mb-6 italic">
-                  "{rev.comment}"
-                </p>
-              </div>
+                {/* Reviewer Details Footer */}
+                <div className="pt-4 border-t border-[#F0E6D8] flex items-center justify-between">
+                  <div>
+                    <h4 className="font-serif font-bold text-leela-heading text-base">
+                      {rev.userName}
+                    </h4>
+                    <div className="text-xs text-leela-muted flex items-center gap-1 mt-0.5 font-medium">
+                      <span>{rev.userLocation}</span>
+                      <span>•</span>
+                      <span className="text-gold-700">{rev.diningType}</span>
+                    </div>
+                  </div>
 
-              {/* Reviewer Details Footer */}
-              <div className="pt-4 border-t border-[#F0E6D8] flex items-center justify-between">
-                <div>
-                  <h4 className="font-serif font-bold text-leela-heading text-base">
-                    {rev.userName}
-                  </h4>
-                  <div className="text-xs text-leela-muted flex items-center gap-1 mt-0.5 font-medium">
-                    <span>{rev.userLocation}</span>
-                    <span>•</span>
-                    <span className="text-gold-700">{rev.diningType}</span>
+                  <div className="text-right">
+                    <span className="text-[10px] text-leela-muted block font-medium">{rev.date}</span>
+                    {rev.favoriteDish && (
+                      <span className="text-[10px] font-mono font-bold text-gold-900 bg-[#FAF3E0] border border-gold-300 px-2 py-0.5 rounded-md mt-1 inline-block shadow-sm">
+                        ★ {rev.favoriteDish}
+                      </span>
+                    )}
                   </div>
                 </div>
-
-                <div className="text-right">
-                  <span className="text-[10px] text-leela-muted block font-medium">{rev.date}</span>
-                  {rev.favoriteDish && (
-                    <span className="text-[10px] font-mono font-bold text-gold-900 bg-[#FAF3E0] border border-gold-300 px-2 py-0.5 rounded-md mt-1 inline-block shadow-sm">
-                      ★ {rev.favoriteDish}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Scroll Hint & Count */}

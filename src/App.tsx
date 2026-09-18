@@ -19,6 +19,19 @@ const AppContent: React.FC = () => {
   const { setIsMenuOriginalOpen } = useStore();
   const [currentPage, setCurrentPage] = useState<'home' | 'menu' | 'turf'>('home');
 
+  const scrollToHash = (hash: string) => {
+    if (!hash || hash === '#home' || hash === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 120);
+  };
+
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.toLowerCase();
@@ -30,6 +43,7 @@ const AppContent: React.FC = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
+        scrollToHash(hash);
       }
     };
 
@@ -38,13 +52,20 @@ const AppContent: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  const navigateTo = (page: 'home' | 'menu' | 'turf') => {
+  const navigateTo = (page: 'home' | 'menu' | 'turf', targetHash?: string) => {
     if (page === 'home') {
-      window.location.hash = '#home';
+      const finalHash = targetHash || '#home';
+      window.location.hash = finalHash;
+      setCurrentPage('home');
+      scrollToHash(finalHash);
     } else if (page === 'menu') {
       window.location.hash = '#menu';
+      setCurrentPage('menu');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (page === 'turf') {
       window.location.hash = '#turf';
+      setCurrentPage('turf');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Trophy, Clock, Sun, Moon, ArrowRight, ShieldCheck, MapPin, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Trophy, Clock, Sun, Moon, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface HomeTurfPreviewProps {
   onOpenTurfPage: () => void;
@@ -18,8 +19,14 @@ export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Column: Details & Features */}
-            <div className="lg:col-span-7 space-y-4">
+            {/* Left Column: Details & Features (Lands from Left) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="lg:col-span-7 space-y-4"
+            >
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                   <Trophy className="w-3.5 h-3.5" /> Chittoor Sports Landmark
@@ -62,10 +69,16 @@ export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage
                   <div className="text-lg font-black text-emerald-400">₹700 <span className="text-xs font-normal text-gray-400">/ hr</span></div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right Column: Book Button & Visual Preview */}
-            <div className="lg:col-span-5 bg-[#0a0f0d] rounded-2xl p-6 border border-white/10 space-y-4 text-center">
+            {/* Right Column: Book Button & Visual Preview (Lands from Right) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="lg:col-span-5 bg-[#0a0f0d] rounded-2xl p-6 border border-white/10 space-y-4 text-center"
+            >
               <div className="text-left space-y-2 border-b border-white/10 pb-4">
                 <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider block">
                   Live Slot Booking Engine
@@ -105,7 +118,7 @@ export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Instant WhatsApp Match Pass generated</span>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Trophy, 
   Star, 
@@ -12,7 +13,7 @@ import {
 export const RecognitionSection: React.FC = () => {
 
   return (
-    <section id="recognition" className="py-14 sm:py-16 relative bg-[#FAF7F2] border-t border-[#E8DCB8]">
+    <section id="recognition" className="py-14 sm:py-16 relative bg-[#FAF7F2] border-t border-[#E8DCB8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Banner Card */}
@@ -22,8 +23,14 @@ export const RecognitionSection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Accolades Column */}
-            <div className="lg:col-span-7 space-y-4">
+            {/* Left Accolades Column (Lands from Left) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="lg:col-span-7 space-y-4"
+            >
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider shadow-xs">
                 <Trophy className="w-3.5 h-3.5 text-gold-700" />
                 <span>Highway Dining Landmark</span>
@@ -79,10 +86,16 @@ export const RecognitionSection: React.FC = () => {
                   <span>Sprawling 24-hour illuminated parking with dedicated sports turf & stays</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right Map & Direct Highway Guide Column */}
-            <div className="lg:col-span-5 bg-[#FAF7F2] border border-[#E8DCB8] rounded-3xl p-6 sm:p-7 space-y-6 shadow-sm">
+            {/* Right Map & Direct Highway Guide Column (Lands from Right) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
+              className="lg:col-span-5 bg-[#FAF7F2] border border-[#E8DCB8] rounded-3xl p-6 sm:p-7 space-y-6 shadow-sm"
+            >
               <div className="flex items-center justify-between border-b border-[#E8DCB8] pb-4">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-[#FAF3E0] border border-gold-300 text-gold-700">
@@ -140,7 +153,7 @@ export const RecognitionSection: React.FC = () => {
                   href="https://maps.google.com/?q=Eden+Park+Family+Resto+Chittoor"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 py-3.5 px-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-gold-sm hover:shadow-gold-md transition-all"
+                  className="flex-1 py-3.5 px-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-gold-sm hover:shadow-gold-md transition-all cursor-pointer hover:scale-105"
                 >
                   <Navigation className="w-4 h-4" />
                   <span>Google Maps Directions</span>
@@ -148,13 +161,13 @@ export const RecognitionSection: React.FC = () => {
 
                 <a
                   href="tel:+919603308999"
-                  className="py-3.5 px-4 rounded-xl border border-gold-400 bg-white hover:bg-[#FAF3E0] text-gold-900 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-3.5 px-4 rounded-xl border border-gold-400 bg-white hover:bg-[#FAF3E0] text-gold-900 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
                 >
                   <Phone className="w-3.5 h-3.5 text-gold-600" />
                   <span>Call Restro</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

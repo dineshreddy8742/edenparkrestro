@@ -4,7 +4,7 @@ import { BrandLogo } from "./BrandLogo";
 import { Phone, Menu as MenuIcon, X, ShieldCheck, MapPin, BookOpen } from "lucide-react";
 
 interface NavbarProps {
-  onNavigate?: (page: 'home' | 'menu' | 'turf') => void;
+  onNavigate?: (page: 'home' | 'menu' | 'turf', targetHash?: string) => void;
   currentPage?: 'home' | 'menu' | 'turf';
 }
 
@@ -32,22 +32,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
 
   const handleLinkClick = (link: typeof navLinks[0]) => {
     setMobileMenuOpen(false);
-    if (onNavigate) {
-      if (link.page === 'menu') {
-        onNavigate('menu');
-        return;
-      }
-      if (link.page === 'turf') {
-        onNavigate('turf');
-        return;
-      }
-      if (currentPage !== 'home') {
-        onNavigate('home');
-        setTimeout(() => {
-          const el = document.querySelector(link.href);
-          el?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-        return;
+
+    if (link.page === 'menu') {
+      window.location.hash = '#menu';
+      onNavigate?.('menu');
+      return;
+    }
+
+    if (link.page === 'turf') {
+      window.location.hash = '#turf';
+      onNavigate?.('turf');
+      return;
+    }
+
+    // Home page or home section anchor
+    if (currentPage !== 'home') {
+      onNavigate?.('home', link.href);
+    } else {
+      window.location.hash = link.href;
+      if (link.href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.querySelector(link.href);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     }
   };
@@ -111,9 +120,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
           href="#home" 
           onClick={(e) => {
             e.preventDefault();
-            onNavigate ? onNavigate('home') : (window.location.hash = '#home');
+            handleLinkClick(navLinks[0]);
           }}
-          className="block"
+          className="block cursor-pointer"
         >
           <BrandLogo size={scrolled ? 'sm' : 'md'} light={!scrolled && currentPage === 'home'} />
         </a>
@@ -128,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
                 e.preventDefault();
                 handleLinkClick(link);
               }}
-              className={`${scrolled ? 'text-[13px] py-0.5' : 'text-sm py-1'} font-semibold tracking-wide transition-colors duration-200 relative group ${getLinkClass(link)}`}
+              className={`${scrolled ? 'text-[13px] py-0.5' : 'text-sm py-1'} font-semibold tracking-wide transition-colors duration-200 relative group cursor-pointer ${getLinkClass(link)}`}
             >
               {link.label}
               {link.highlight === "green" && (
@@ -146,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
         <div className="flex items-center gap-2.5 sm:gap-3">
           <button 
             onClick={() => setIsMenuOriginalOpen(true)}
-            className={`hidden sm:flex items-center gap-1.5 font-bold rounded-full transition-all shadow-xs ${
+            className={`hidden sm:flex items-center gap-1.5 font-bold rounded-full transition-all shadow-xs cursor-pointer ${
               scrolled ? "px-3 py-1.5 text-[11px]" : "px-3.5 py-2 text-xs"
             } ${
               scrolled || currentPage !== 'home' 
@@ -159,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
           </button>
           <a 
             href="tel:+919603308999"
-            className={`flex items-center gap-1.5 font-bold uppercase tracking-wider text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 rounded-full shadow-gold-sm hover:shadow-gold-md hover:scale-105 active:scale-95 transition-all duration-300 ${
+            className={`flex items-center gap-1.5 font-bold uppercase tracking-wider text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 rounded-full shadow-gold-sm hover:shadow-gold-md hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ${
               scrolled ? "px-3 py-1.5 text-[11px]" : "px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs"
             }`}
           >
@@ -167,7 +176,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
           </a>
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-1.5 sm:p-2 transition-colors ${scrolled || currentPage !== 'home' ? "text-leela-heading hover:text-gold-700" : "text-white hover:text-gold-300"}`}
+            className={`md:hidden p-1.5 sm:p-2 transition-colors cursor-pointer ${scrolled || currentPage !== 'home' ? "text-leela-heading hover:text-gold-700" : "text-white hover:text-gold-300"}`}
             aria-label="Toggle Navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
@@ -187,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
                   e.preventDefault();
                   handleLinkClick(link);
                 }}
-                className={`text-base font-semibold py-1.5 flex items-center justify-between ${link.highlight === "green" ? "text-green-700 font-bold" : link.highlight === "amber" ? "text-amber-700 font-bold" : "text-leela-heading hover:text-gold-700"}`}
+                className={`text-base font-semibold py-1.5 flex items-center justify-between cursor-pointer ${link.highlight === "green" ? "text-green-700 font-bold" : link.highlight === "amber" ? "text-amber-700 font-bold" : "text-leela-heading hover:text-gold-700"}`}
               >
                 <span>{link.label}</span>
                 {link.highlight === "amber" && <span className="text-[9px] font-black bg-amber-500 text-white px-1.5 py-0.5 rounded-full">NEW</span>}
@@ -197,13 +206,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
           <div className="pt-4 border-t border-[#E8DCB8] flex flex-col gap-3">
             <button 
               onClick={() => { setMobileMenuOpen(false); setIsMenuOriginalOpen(true); }}
-              className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold text-gold-800 bg-[#FAF3E0] border border-gold-400 rounded-xl hover:bg-[#F5E6BD]"
+              className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold text-gold-800 bg-[#FAF3E0] border border-gold-400 rounded-xl hover:bg-[#F5E6BD] cursor-pointer"
             >
               <BookOpen className="w-4 h-4 text-gold-700" /><span>View Printed Menu Cards</span>
             </button>
             <a 
               href="tel:+919603308999"
-              className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 rounded-xl shadow-gold-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 rounded-xl shadow-gold-sm cursor-pointer"
             >
               <Phone className="w-4 h-4" /> Call +91 96033 08999
             </a>

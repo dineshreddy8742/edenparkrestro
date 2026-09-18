@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, Play, X } from 'lucide-react';
 
 export const GallerySection: React.FC = () => {
@@ -80,10 +81,16 @@ export const GallerySection: React.FC = () => {
   });
 
   return (
-    <section id="gallery" className="py-14 sm:py-16 relative bg-[#FAF5EC] border-t border-[#E8DCB8]">
+    <section id="gallery" className="py-14 sm:py-16 relative bg-[#FAF5EC] border-t border-[#E8DCB8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-8"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
             <Camera className="w-3.5 h-3.5 text-gold-700" />
             <span>Photo &amp; Video Gallery</span>
@@ -108,7 +115,7 @@ export const GallerySection: React.FC = () => {
               <button
                 key={tab.key}
                 onClick={() => setActiveFilter(tab.key as any)}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                   activeFilter === tab.key
                     ? 'bg-gradient-to-r from-gold-600 to-gold-700 text-white shadow-sm'
                     : 'bg-white text-leela-heading border border-[#DFCDAB] hover:border-gold-500 shadow-sm'
@@ -118,93 +125,113 @@ export const GallerySection: React.FC = () => {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid with Landing from Sides */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredMedia.map((item, idx) => (
-            <div
-              key={idx}
-              onClick={() => setLightboxMedia({ type: item.type, src: item.src, title: item.title })}
-              className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] hover:border-gold-500 cursor-pointer shadow-palace-card hover:shadow-palace-hover transition-all duration-500 hover:-translate-y-1"
-            >
-              {item.type === 'video' ? (
-                <>
-                  <video
+          {filteredMedia.map((item, idx) => {
+            const isLeft = idx % 2 === 0;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ 
+                  duration: 0.55, 
+                  delay: (idx % 3) * 0.1,
+                  ease: [0.25, 0.1, 0.25, 1.0] 
+                }}
+                onClick={() => setLightboxMedia({ type: item.type, src: item.src, title: item.title })}
+                className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] hover:border-gold-500 cursor-pointer shadow-palace-card hover:shadow-palace-hover transition-all duration-500 hover:-translate-y-1"
+              >
+                {item.type === 'video' ? (
+                  <>
+                    <video
+                      src={item.src}
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+                      onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
+                    />
+                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-gold-400 flex items-center justify-center text-gold-700 shadow-md">
+                      <Play className="w-4 h-4 fill-gold-600 text-gold-600 ml-0.5" />
+                    </div>
+                  </>
+                ) : (
+                  <img
                     src={item.src}
-                    muted
-                    loop
-                    playsInline
+                    alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
-                    onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
+                    loading="lazy"
                   />
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-gold-400 flex items-center justify-center text-gold-700 shadow-md">
-                    <Play className="w-4 h-4 fill-gold-600 text-gold-600 ml-0.5" />
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              )}
+                )}
 
-              {/* Gradient overlay and details */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D061] font-mono mb-1">
-                  {item.tag}
-                </span>
-                <h3 className="font-serif font-bold text-base text-white group-hover:text-amber-200 transition-colors">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
+                {/* Gradient overlay and details */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D061] font-mono mb-1">
+                    {item.tag}
+                  </span>
+                  <h3 className="font-serif font-bold text-base text-white group-hover:text-amber-200 transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
       {/* Lightbox Modal */}
-      {lightboxMedia && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in"
-          onClick={() => setLightboxMedia(null)}
-        >
-          <div 
-            className="relative max-w-4xl w-full rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] p-3 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {lightboxMedia && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            onClick={() => setLightboxMedia(null)}
           >
-            <button
-              onClick={() => setLightboxMedia(null)}
-              className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/70 text-white hover:text-gold-300 border border-white/20 transition-colors"
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl w-full rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] p-3 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-6 h-6" />
-            </button>
+              <button
+                onClick={() => setLightboxMedia(null)}
+                className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/70 text-white hover:text-gold-300 border border-white/20 transition-colors cursor-pointer"
+              >
+                <X className="w-6 h-6" />
+              </button>
 
-            {lightboxMedia.type === 'video' ? (
-              <video
-                src={lightboxMedia.src}
-                controls
-                autoPlay
-                className="w-full max-h-[80vh] rounded-2xl object-contain bg-black"
-              />
-            ) : (
-              <img
-                src={lightboxMedia.src}
-                alt={lightboxMedia.title}
-                className="w-full max-h-[80vh] rounded-2xl object-contain"
-              />
-            )}
+              {lightboxMedia.type === 'video' ? (
+                <video
+                  src={lightboxMedia.src}
+                  controls
+                  autoPlay
+                  className="w-full max-h-[80vh] rounded-2xl object-contain bg-black"
+                />
+              ) : (
+                <img
+                  src={lightboxMedia.src}
+                  alt={lightboxMedia.title}
+                  className="w-full max-h-[80vh] rounded-2xl object-contain"
+                />
+              )}
 
-            <div className="p-4 text-center">
-              <h3 className="font-serif font-bold text-lg text-leela-heading">
-                {lightboxMedia.title}
-              </h3>
-            </div>
-          </div>
-        </div>
-      )}
+              <div className="p-4 text-center">
+                <h3 className="font-serif font-bold text-lg text-leela-heading">
+                  {lightboxMedia.title}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

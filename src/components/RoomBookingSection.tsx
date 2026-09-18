@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { BedDouble, Wifi, Coffee, Star, Bell, CheckCircle2, Sparkles, Clock } from "lucide-react";
 
 export const RoomBookingSection: React.FC = () => {
@@ -27,7 +28,13 @@ export const RoomBookingSection: React.FC = () => {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-950/50 border border-amber-700/40 text-amber-400 text-xs font-bold tracking-widest uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5" /> Coming Soon
           </div>
@@ -41,34 +48,56 @@ export const RoomBookingSection: React.FC = () => {
             Premium highway stays designed for pilgrims, business travellers & families on the Bangalore–Tirupati route.
             Clean, comfortable, and Leela-inspired hospitality at every room.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Room preview cards */}
+        {/* Room preview cards with Landing from Sides */}
         <div className="grid sm:grid-cols-3 gap-6 mb-14">
-          {rooms.map((room) => (
-            <div key={room.name} className="relative group bg-white/5 border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-amber-700/40 transition-all">
-              {/* Coming soon overlay */}
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] rounded-2xl z-10 flex flex-col items-center justify-center gap-2">
-                <div className="px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold tracking-widest uppercase flex items-center gap-1.5">
-                  <Clock className="w-3 h-3" /> Coming Soon
+          {rooms.map((room, index) => {
+            const isLeft = index === 0;
+            const isRight = index === 2;
+            const xInitial = isLeft ? -50 : (isRight ? 50 : 0);
+            return (
+              <motion.div 
+                key={room.name}
+                initial={{ opacity: 0, x: xInitial, y: isLeft || isRight ? 0 : 30 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ 
+                  duration: 0.55, 
+                  delay: index * 0.12, 
+                  ease: [0.25, 0.1, 0.25, 1.0] 
+                }}
+                className="relative group bg-white/5 border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-amber-700/40 transition-all"
+              >
+                {/* Coming soon overlay */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] rounded-2xl z-10 flex flex-col items-center justify-center gap-2">
+                  <div className="px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold tracking-widest uppercase flex items-center gap-1.5">
+                    <Clock className="w-3 h-3" /> Coming Soon
+                  </div>
+                  <p className="text-gray-400 text-xs">Bookings opening shortly</p>
                 </div>
-                <p className="text-gray-400 text-xs">Bookings opening shortly</p>
-              </div>
-              {/* Card content (blurred behind overlay) */}
-              <div className="text-3xl mb-3">{room.icon}</div>
-              <div className="inline-block px-2 py-0.5 rounded-full bg-amber-900/40 border border-amber-700/30 text-amber-400 text-[10px] font-bold mb-2">{room.tag}</div>
-              <h3 className="text-white font-bold text-lg mb-1">{room.name}</h3>
-              <p className="text-gray-400 text-sm mb-4">{room.desc}</p>
-              <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-extrabold text-amber-400">{room.price}</span>
-                <span className="text-gray-500 text-xs">/ night</span>
-              </div>
-            </div>
-          ))}
+                {/* Card content */}
+                <div className="text-3xl mb-3">{room.icon}</div>
+                <div className="inline-block px-2 py-0.5 rounded-full bg-amber-900/40 border border-amber-700/30 text-amber-400 text-[10px] font-bold mb-2">{room.tag}</div>
+                <h3 className="text-white font-bold text-lg mb-1">{room.name}</h3>
+                <p className="text-gray-400 text-sm mb-4">{room.desc}</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-extrabold text-amber-400">{room.price}</span>
+                  <span className="text-gray-500 text-xs">/ night</span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Amenities strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14"
+        >
           {[
             { icon: <Wifi className="w-5 h-5"/>, label: "High-Speed WiFi", sub: "All rooms" },
             { icon: <Coffee className="w-5 h-5"/>, label: "24/7 Café Access", sub: "Filter coffee & snacks" },
@@ -83,10 +112,16 @@ export const RoomBookingSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Notify form */}
-        <div className="max-w-xl mx-auto text-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-xl mx-auto text-center"
+        >
           <div className="bg-gradient-to-b from-amber-950/40 to-transparent border border-amber-800/30 rounded-2xl p-8">
             <Bell className="w-10 h-10 text-amber-400 mx-auto mb-4" />
             <h3 className="text-white text-xl font-bold mb-2">Get Notified When We Launch</h3>
@@ -108,7 +143,7 @@ export const RoomBookingSection: React.FC = () => {
                   className="flex-1 px-4 py-3 bg-white/5 border border-white/15 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-amber-500 transition-colors"
                 />
                 <button type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-500 hover:to-yellow-400 text-white font-bold rounded-xl transition-all shadow-lg whitespace-nowrap">
+                  className="px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-500 hover:to-yellow-400 text-white font-bold rounded-xl transition-all shadow-lg whitespace-nowrap cursor-pointer hover:scale-105">
                   Notify Me
                 </button>
               </form>
@@ -117,7 +152,7 @@ export const RoomBookingSection: React.FC = () => {
               📞 Or call <a href="tel:+919603308999" className="text-amber-600 hover:text-amber-400 underline">+91 96033 08999</a> for advance room enquiries
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
