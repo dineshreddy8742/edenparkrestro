@@ -27,7 +27,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 460
   },
@@ -43,7 +43,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '18 mins',
     calories: 420
   },
@@ -58,7 +58,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '18 mins',
     calories: 410
   },
@@ -74,7 +74,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '22 mins',
     calories: 520
   },
@@ -90,7 +90,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '25 mins',
     calories: 580
   },
@@ -105,7 +105,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '25 mins',
     calories: 610
   },
@@ -120,7 +120,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 380
   },
@@ -135,7 +135,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 340
   },
@@ -152,7 +152,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 650
   },
@@ -168,7 +168,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 690
   },
@@ -182,7 +182,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 640
   },
@@ -196,7 +196,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 720
   },
@@ -211,7 +211,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 780
   },
@@ -226,7 +226,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 840
   },
@@ -241,7 +241,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 480
   },
@@ -255,7 +255,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 1,
     available: true,
-    image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 560
   },
@@ -269,7 +269,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '18 mins',
     calories: 540
   },
@@ -286,7 +286,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 360
   },
@@ -301,7 +301,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 290
   },
@@ -315,7 +315,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 1,
     available: true,
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 260
   },
@@ -330,7 +330,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '18 mins',
     calories: 440
   },
@@ -345,7 +345,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1617692855027-33b14f061079?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1617692855027-33b14f061079?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '25 mins',
     calories: 820
   },
@@ -360,7 +360,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 480
   },
@@ -374,7 +374,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 320
   },
@@ -391,7 +391,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '14 mins',
     calories: 390
   },
@@ -406,7 +406,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 3,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 430
   },
@@ -420,7 +420,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1576867757603-05b134ebc379?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576867757603-05b134ebc379?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '14 mins',
     calories: 410
   },
@@ -435,7 +435,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 350
   },
@@ -449,7 +449,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 1,
     available: true,
-    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 280
   },
@@ -466,7 +466,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '16 mins',
     calories: 550
   },
@@ -481,7 +481,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 590
   },
@@ -496,7 +496,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 560
   },
@@ -511,7 +511,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 3,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '20 mins',
     calories: 420
   },
@@ -526,7 +526,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 460
   },
@@ -540,7 +540,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 1,
     available: true,
-    image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 510
   },
@@ -554,7 +554,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 410
   },
@@ -571,7 +571,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '8 mins',
     calories: 220
   },
@@ -586,7 +586,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '8 mins',
     calories: 230
   },
@@ -601,7 +601,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 340
   },
@@ -616,7 +616,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isChefSpecial: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '14 mins',
     calories: 390
   },
@@ -630,7 +630,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '6 mins',
     calories: 140
   },
@@ -647,7 +647,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 520
   },
@@ -661,7 +661,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '15 mins',
     calories: 490
   },
@@ -675,7 +675,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '14 mins',
     calories: 440
   },
@@ -689,7 +689,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '10 mins',
     calories: 310
   },
@@ -707,7 +707,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 320
   },
@@ -721,7 +721,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 2,
     available: true,
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '12 mins',
     calories: 280
   },
@@ -735,7 +735,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'non-veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1607528971899-2e89e6c0ec69?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1607528971899-2e89e6c0ec69?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '10 mins',
     calories: 180
   },
@@ -749,7 +749,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '10 mins',
     calories: 160
   },
@@ -767,7 +767,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '6 mins',
     calories: 190
   },
@@ -781,7 +781,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '5 mins',
     calories: 150
   },
@@ -796,7 +796,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '5 mins',
     calories: 130
   },
@@ -812,7 +812,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isChefSpecial: true,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '10 mins',
     calories: 420
   },
@@ -827,7 +827,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isBestseller: true,
     available: true,
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '8 mins',
     calories: 380
   },
@@ -841,7 +841,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     dietary: 'veg',
     spiceLevel: 0,
     available: true,
-    image: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&w=450&q=70&auto=format',
     preparationTime: '5 mins',
     calories: 120
   }

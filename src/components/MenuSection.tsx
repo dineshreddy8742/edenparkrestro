@@ -301,13 +301,12 @@ export const MenuSection: React.FC = () => {
               return (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, x: isEvenCol ? -50 : 50, y: 20 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "100px" }}
                   transition={{ 
-                    duration: 0.55, 
-                    delay: (index % 4) * 0.08, 
-                    ease: [0.25, 0.1, 0.25, 1.0] 
+                    duration: 0.22, 
+                    ease: "easeOut" 
                   }}
                 >
                   <MenuItemCard

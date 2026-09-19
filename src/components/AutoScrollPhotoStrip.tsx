@@ -10,13 +10,13 @@ export const AutoScrollPhotoStrip: React.FC = () => {
       caption: 'Bangalore–Tirupati NH 24/7'
     },
     {
-      src: '/assets/images/hero-slide-1.png',
+      src: '/assets/images/hero-slide-1.jpg',
       tag: 'Palatial Grounds',
       title: 'Royal Water Fountains & Manicured Gardens',
       caption: 'Palatial Landscape'
     },
     {
-      src: '/assets/images/hero-slide-2.png',
+      src: '/assets/images/hero-slide-2.jpg',
       tag: 'Gazebo Pavilions',
       title: 'Open Garden Gazebos & Courtyard Seating',
       caption: 'Al Fresco Dining'
@@ -100,6 +100,7 @@ export const AutoScrollPhotoStrip: React.FC = () => {
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                decoding="async"
               />
 
               {/* Gradient Scrim */}

@@ -127,47 +127,45 @@ export const GallerySection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Gallery Grid with Landing from Sides */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredMedia.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ 
-                  duration: 0.55, 
-                  delay: (idx % 3) * 0.1,
-                  ease: [0.25, 0.1, 0.25, 1.0] 
-                }}
-                onClick={() => setLightboxMedia({ type: item.type, src: item.src, title: item.title })}
-                className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] hover:border-gold-500 cursor-pointer shadow-palace-card hover:shadow-palace-hover transition-all duration-500 hover:-translate-y-1"
-              >
-                {item.type === 'video' ? (
-                  <>
-                    <video
-                      src={item.src}
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
-                      onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
-                    />
-                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-gold-400 flex items-center justify-center text-gold-700 shadow-md">
-                      <Play className="w-4 h-4 fill-gold-600 text-gold-600 ml-0.5" />
-                    </div>
-                  </>
-                ) : (
-                  <img
+        {/* Gallery Grid with Fast Responsive Loading */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {filteredMedia.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "100px" }}
+              transition={{ 
+                duration: 0.25, 
+                ease: "easeOut" 
+              }}
+              onClick={() => setLightboxMedia({ type: item.type, src: item.src, title: item.title })}
+              className="group relative h-60 sm:h-72 rounded-3xl overflow-hidden bg-white border border-[#E8DCB8] hover:border-gold-500 cursor-pointer shadow-palace-card hover:shadow-palace-hover transition-all duration-300 hover:-translate-y-1"
+            >
+              {item.type === 'video' ? (
+                <>
+                  <video
                     src={item.src}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+                    onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
                   />
-                )}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-gold-400 flex items-center justify-center text-gold-700 shadow-md">
+                    <Play className="w-4 h-4 fill-gold-600 text-gold-600 ml-0.5" />
+                  </div>
+                </>
+              ) : (
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
 
                 {/* Gradient overlay and details */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end">
@@ -179,8 +177,7 @@ export const GallerySection: React.FC = () => {
                   </h3>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
         </div>
       </div>
 

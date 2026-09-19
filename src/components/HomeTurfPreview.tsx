@@ -8,23 +8,23 @@ interface HomeTurfPreviewProps {
 
 export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage }) => {
   return (
-    <section id="turf-preview" className="py-12 sm:py-16 bg-[#0a0f0d] text-gray-200 relative overflow-hidden border-t border-emerald-900/30">
+    <section id="turf-preview" className="py-10 sm:py-16 bg-[#0a0f0d] text-gray-200 relative overflow-hidden border-t border-emerald-900/30">
       {/* Subtle Radial Glow */}
       <div className="absolute top-0 right-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Banner Card */}
-        <div className="bg-[#121915] border border-emerald-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden relative">
+        <div className="bg-[#121915] border border-emerald-500/30 rounded-3xl p-5 sm:p-10 shadow-2xl overflow-hidden relative">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             
-            {/* Left Column: Details & Features (Lands from Left) */}
+            {/* Left Column: Details & Features */}
             <motion.div 
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "100px" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
               className="lg:col-span-7 space-y-4"
             >
               <div className="flex flex-wrap items-center gap-2">
@@ -71,13 +71,13 @@ export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage
               </div>
             </motion.div>
 
-            {/* Right Column: Book Button & Visual Preview (Lands from Right) */}
+            {/* Right Column: Book Button & Visual Preview */}
             <motion.div 
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
-              className="lg:col-span-5 bg-[#0a0f0d] rounded-2xl p-6 border border-white/10 space-y-4 text-center"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "100px" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="lg:col-span-5 bg-[#0a0f0d] rounded-2xl p-5 sm:p-6 border border-white/10 space-y-4 text-center"
             >
               <div className="text-left space-y-2 border-b border-white/10 pb-4">
                 <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider block">
@@ -108,7 +108,7 @@ export const HomeTurfPreview: React.FC<HomeTurfPreviewProps> = ({ onOpenTurfPage
 
               <button
                 onClick={onOpenTurfPage}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/60 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                className="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/60 transition-all hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <span>Book Turf Slots Online</span>
                 <ArrowRight className="w-4 h-4" />

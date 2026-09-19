@@ -18,13 +18,13 @@ export const HeroSection: React.FC = () => {
 
   const slides = [
     {
-      src: '/assets/images/hero-slide-1.png',
+      src: '/assets/images/hero-slide-1.jpg',
       title: 'Green Lawns & Resort Grounds',
       tag: 'Garden Grounds',
       desc: 'Spacious highway restaurant welcoming Bangalore–Tirupati commuters'
     },
     {
-      src: '/assets/images/hero-slide-2.png',
+      src: '/assets/images/hero-slide-2.jpg',
       title: 'Open Dining Gazebos & Courtyard',
       tag: 'Garden Gazebos',
       desc: 'Open-air dining under evening skies with natural cross-breezes'

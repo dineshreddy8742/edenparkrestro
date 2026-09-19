@@ -7,7 +7,7 @@ interface HomeMenuPreviewProps {
   onOpenOriginalMenu: () => void;
 }
 
-// 6 Curated Signature Highlights for clean, mobile-fast home landing page
+// 6 Curated Signature Highlights with fast-loading optimized images
 const SIGNATURE_HIGHLIGHTS = [
   {
     name: 'Hyderabad Dum Biryani',
@@ -15,7 +15,7 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 250,
     dietary: 'non-veg',
     tag: 'Bestseller',
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=450&q=70',
     desc: 'Aged royal basmati sealed with tender chicken, Kashmiri saffron, mint & pure ghee in clay dum.'
   },
   {
@@ -24,7 +24,7 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 270,
     dietary: 'non-veg',
     tag: 'Signature',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=450&q=70',
     desc: 'Fiery country chicken slow-roasted with crushed Rayalaseema red chillies and native spices.'
   },
   {
@@ -33,7 +33,7 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 390,
     dietary: 'non-veg',
     tag: 'Must Try',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=450&q=70',
     desc: 'Prime tender lamb morsels slow-braised in clarified desi cow ghee and royal whole spices.'
   },
   {
@@ -42,7 +42,7 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 249,
     dietary: 'veg',
     tag: 'Bestseller',
-    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=450&q=70',
     desc: 'Fresh cottage cheese cubes bathing in rich tomato-cashew satin gravy with kasoori methi.'
   },
   {
@@ -51,7 +51,7 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 55,
     dietary: 'veg',
     tag: 'Tandoor Hot',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=450&q=70',
     desc: 'Soft leavened tandoor bread brushed lavishly with butter and freshly minced garlic herbs.'
   },
   {
@@ -60,23 +60,23 @@ const SIGNATURE_HIGHLIGHTS = [
     price: 160,
     dietary: 'veg',
     tag: 'Signature Drink',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=450&q=70',
     desc: 'Tender coconut water blended with pineapple nectar and fresh mint over crushed ice.'
   }
 ];
 
 export const HomeMenuPreview: React.FC<HomeMenuPreviewProps> = ({ onOpenFullMenu, onOpenOriginalMenu }) => {
   return (
-    <section id="menu-preview" className="py-12 sm:py-16 bg-[#FAF7F2] border-t border-[#E8DCB8] relative overflow-hidden">
+    <section id="menu-preview" className="py-10 sm:py-16 bg-[#FAF7F2] border-t border-[#E8DCB8] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8"
+          viewport={{ once: true, margin: "100px" }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 sm:mb-8"
         >
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-400 bg-[#FAF3E0] text-gold-900 text-[11px] font-bold uppercase tracking-wider mb-2.5 shadow-xs">
@@ -112,89 +112,83 @@ export const HomeMenuPreview: React.FC<HomeMenuPreviewProps> = ({ onOpenFullMenu
           </div>
         </motion.div>
 
-        {/* 6 Clean Cards Grid with side landing entrance */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-          {SIGNATURE_HIGHLIGHTS.map((dish, i) => {
-            const isLeft = i % 2 === 0;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ 
-                  duration: 0.55, 
-                  delay: (i % 3) * 0.1, 
-                  ease: [0.25, 0.1, 0.25, 1.0] 
-                }}
-                onClick={onOpenFullMenu}
-                className="group bg-white rounded-2xl overflow-hidden border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 cursor-pointer shadow-palace-card hover:shadow-palace-hover flex flex-col justify-between hover:-translate-y-1.5"
-              >
-                <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-[#241C16]">
-                  <img
-                    src={dish.image}
-                    alt={dish.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
-                  
-                  {/* Veg/Non-Veg & Tag Badges */}
-                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
-                    <span
-                      className={`w-4 h-4 rounded-xs flex items-center justify-center border-2 bg-white shadow-sm ${
-                        dish.dietary === 'veg' ? 'border-emerald-600' : 'border-rose-600'
-                      }`}
-                    >
-                      <span className={`w-1.5 h-1.5 rounded-full ${dish.dietary === 'veg' ? 'bg-emerald-600' : 'bg-rose-600'}`} />
-                    </span>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 text-gold-300 backdrop-blur-sm border border-gold-400/40">
-                      {dish.tag}
-                    </span>
-                  </div>
-
-                  <div className="absolute bottom-2 left-2.5 text-xs text-white/90 font-mono font-bold bg-black/60 px-2 py-0.5 rounded">
-                    {dish.category}
-                  </div>
+        {/* 6 Cards Grid with fast, responsive instant loading */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
+          {SIGNATURE_HIGHLIGHTS.map((dish, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "100px" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              onClick={onOpenFullMenu}
+              className="group bg-white rounded-2xl overflow-hidden border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 cursor-pointer shadow-palace-card hover:shadow-palace-hover flex flex-col justify-between hover:-translate-y-1"
+            >
+              <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-[#241C16]">
+                <img
+                  src={dish.image}
+                  alt={dish.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
+                
+                {/* Veg/Non-Veg & Tag Badges */}
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                  <span
+                    className={`w-4 h-4 rounded-xs flex items-center justify-center border-2 bg-white shadow-sm ${
+                      dish.dietary === 'veg' ? 'border-emerald-600' : 'border-rose-600'
+                    }`}
+                  >
+                    <span className={`w-1.5 h-1.5 rounded-full ${dish.dietary === 'veg' ? 'bg-emerald-600' : 'bg-rose-600'}`} />
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 text-gold-300 backdrop-blur-sm border border-gold-400/40">
+                    {dish.tag}
+                  </span>
                 </div>
 
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <h3 className="font-serif font-bold text-base text-leela-heading group-hover:text-gold-700 transition-colors">
-                        {dish.name}
-                      </h3>
-                      <span className="text-base font-mono font-bold text-gold-700 whitespace-nowrap">
-                        ₹{dish.price}
-                      </span>
-                    </div>
-                    <p className="text-xs text-leela-body line-clamp-2 leading-relaxed font-normal">
-                      {dish.desc}
-                    </p>
-                  </div>
-
-                  <div className="mt-3 pt-3 border-t border-[#F0E6D8] flex items-center justify-between text-xs text-gold-700 font-bold group-hover:text-gold-600">
-                    <span>Order &amp; Customize</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
+                <div className="absolute bottom-2 left-2.5 text-xs text-white/90 font-mono font-bold bg-black/60 px-2 py-0.5 rounded">
+                  {dish.category}
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between gap-2 mb-1.5">
+                    <h3 className="font-serif font-bold text-base text-leela-heading group-hover:text-gold-700 transition-colors">
+                      {dish.name}
+                    </h3>
+                    <span className="text-base font-mono font-bold text-gold-700 whitespace-nowrap">
+                      ₹{dish.price}
+                    </span>
+                  </div>
+                  <p className="text-xs text-leela-body line-clamp-2 leading-relaxed font-normal">
+                    {dish.desc}
+                  </p>
+                </div>
+
+                <div className="mt-3 pt-3 border-t border-[#F0E6D8] flex items-center justify-between text-xs text-gold-700 font-bold group-hover:text-gold-600">
+                  <span>Order &amp; Customize</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Mobile Full Menu CTA Button */}
-        <div className="flex flex-col sm:hidden gap-3">
+        <div className="flex flex-col sm:hidden gap-2.5">
           <button
             onClick={onOpenFullMenu}
-            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer"
           >
             <span>View All 55+ Dishes on Full Menu</span>
             <ArrowRight className="w-4 h-4" />
           </button>
           <button
             onClick={onOpenOriginalMenu}
-            className="w-full py-3 rounded-xl border border-gold-400/70 bg-white text-xs font-bold text-gold-800 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-2.5 rounded-xl border border-gold-400/70 bg-white text-xs font-bold text-gold-800 flex items-center justify-center gap-2 cursor-pointer"
           >
             <BookOpen className="w-4 h-4 text-gold-700" />
             <span>View 10-Page Printed Booklet</span>

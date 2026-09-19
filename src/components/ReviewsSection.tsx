@@ -115,15 +115,14 @@ export const ReviewsSection: React.FC = () => {
             return (
               <motion.div
                 key={rev.id}
-                initial={{ opacity: 0, x: isLeft ? -40 : 40, y: 15 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "100px" }}
                 transition={{ 
-                  duration: 0.5, 
-                  delay: (index % 4) * 0.08,
-                  ease: [0.25, 0.1, 0.25, 1.0] 
+                  duration: 0.22, 
+                  ease: "easeOut" 
                 }}
-                className="w-[300px] sm:w-[360px] md:w-[400px] shrink-0 snap-start bg-white p-6 sm:p-7 rounded-3xl border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 flex flex-col justify-between shadow-palace-card hover:shadow-palace-hover relative group"
+                className="w-[280px] sm:w-[360px] md:w-[400px] shrink-0 snap-start bg-white p-5 sm:p-7 rounded-3xl border border-[#E8DCB8] hover:border-gold-500 transition-all duration-300 flex flex-col justify-between shadow-palace-card hover:shadow-palace-hover relative group"
               >
                 <Quote className="absolute top-5 right-5 w-8 h-8 text-[#E8DCB8]/40 group-hover:text-gold-400/30 transition-colors pointer-events-none" />
 
